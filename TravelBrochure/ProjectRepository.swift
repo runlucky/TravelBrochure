@@ -6,26 +6,48 @@
 //
 
 import Foundation
-import Observation
 import SwiftUI
 import SwiftyToys
 
-@Observable
-class ProjectRepository {
+class ProjectRepository: ObservableObject {
     private let storage = container.resolve(IStorage.self)
     private let key = StorageKey(file: "ProjectRepository.projects")
     
-    var projects: [Project] = []
+    @Published var projects: [Project] = []
     
-    init() {
+    
+    static let shared = ProjectRepository()
+    private init() {
         load()
     }
     
     func load() {
-        projects = (try? storage.get(key, type: [Project].self)) ?? []
+        do {
+            let projects = try storage.get(key, type: [Project].self)
+            self.projects = projects
+
+        } catch {
+            print(error)
+        }
     }
     
     func save() {
         try? storage.upsert(key, value: projects)
     }
+    
+    func add(_ project: Project) {
+        projects.append(project)
+    }
+    
+    func delete(_ project: Project) {
+        projects.removeAll {
+            let result = $0.id == project.id
+            if result {
+                print("delete project: \(project.name)")
+            }
+            return result
+        }
+    }
+    
+
 }

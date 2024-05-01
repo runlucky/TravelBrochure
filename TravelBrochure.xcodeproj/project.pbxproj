@@ -12,6 +12,8 @@
 		192356FF2BE1CD63003EA55F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192356FE2BE1CD63003EA55F /* Assets.xcassets */; };
 		192357022BE1CD63003EA55F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192357012BE1CD63003EA55F /* Preview Assets.xcassets */; };
 		1923570A2BE1DAA3003EA55F /* SwiftyToys in Frameworks */ = {isa = PBXBuildFile; productRef = 192357092BE1DAA3003EA55F /* SwiftyToys */; };
+		1923570E2BE21617003EA55F /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923570D2BE21617003EA55F /* ProjectView.swift */; };
+		192357102BE2165A003EA55F /* TicketRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923570F2BE2165A003EA55F /* TicketRepository.swift */; };
 		19FA84BA2BE1E864000AA44C /* Gear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84B92BE1E864000AA44C /* Gear.swift */; };
 		19FA84BC2BE2063D000AA44C /* ProjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84BB2BE2063D000AA44C /* ProjectRepository.swift */; };
 		19FA84C02BE209CE000AA44C /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84BF2BE209CE000AA44C /* ProjectListView.swift */; };
@@ -23,6 +25,8 @@
 		192356FC2BE1CD62003EA55F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		192356FE2BE1CD63003EA55F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		192357012BE1CD63003EA55F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1923570D2BE21617003EA55F /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
+		1923570F2BE2165A003EA55F /* TicketRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRepository.swift; sourceTree = "<group>"; };
 		19FA84B92BE1E864000AA44C /* Gear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gear.swift; sourceTree = "<group>"; };
 		19FA84BB2BE2063D000AA44C /* ProjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepository.swift; sourceTree = "<group>"; };
 		19FA84BF2BE209CE000AA44C /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
@@ -65,7 +69,9 @@
 				192357002BE1CD63003EA55F /* Preview Content */,
 				19FA84B92BE1E864000AA44C /* Gear.swift */,
 				19FA84BB2BE2063D000AA44C /* ProjectRepository.swift */,
+				1923570F2BE2165A003EA55F /* TicketRepository.swift */,
 				19FA84BF2BE209CE000AA44C /* ProjectListView.swift */,
+				1923570D2BE21617003EA55F /* ProjectView.swift */,
 			);
 			path = TravelBrochure;
 			sourceTree = "<group>";
@@ -154,11 +160,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1923570E2BE21617003EA55F /* ProjectView.swift in Sources */,
 				19FA84BA2BE1E864000AA44C /* Gear.swift in Sources */,
 				19FA84C02BE209CE000AA44C /* ProjectListView.swift in Sources */,
 				19FA84BC2BE2063D000AA44C /* ProjectRepository.swift in Sources */,
 				192356FD2BE1CD62003EA55F /* ContentView.swift in Sources */,
 				192356FB2BE1CD62003EA55F /* TravelBrochureApp.swift in Sources */,
+				192357102BE2165A003EA55F /* TicketRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

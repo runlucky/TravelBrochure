@@ -22,7 +22,8 @@ struct TravelBrochureApp: App {
             case .inactive:
                 print("inactive")
             case .background:
-                print("background")
+                ProjectRepository.shared.save()
+                TicketRepository.shared.save()
             @unknown default:
                 print("unknown")
             }

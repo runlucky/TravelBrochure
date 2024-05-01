@@ -6,6 +6,14 @@ struct Ticket: Codable, Identifiable {
     var rank: Int
     var memo: String
     var tag: String
+    
+    init(name: String, rank: Int, memo: String, tag: String) {
+        self.name = name
+        self.rank = rank
+        self.memo = memo
+        self.tag = tag
+    }
+    
 }
 
 
@@ -13,11 +21,19 @@ struct Ticket: Codable, Identifiable {
 struct Project: Codable, Identifiable {
     private(set) var id = UUID().uuidString
     var name: String
-    var timestmap: Date
+    var timestamp: Date
     var memo: String
     
-    var tickets: [Ticket]
-    var checkedTickets: [Ticket]
+    var ticketIDs: [String]
+    var checkedIDs: [String]
+    
+    init(name: String) {
+        self.name = name
+        self.timestamp = Date()
+        self.memo = ""
+        self.ticketIDs = []
+        self.checkedIDs = []
+    }
 }
 
 

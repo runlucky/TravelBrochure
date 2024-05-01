@@ -6,8 +6,13 @@
 //
 
 import SwiftUI
+import SwiftyToys
 
 struct ContentView: View {
+    init() {
+        registerContainer()
+    }
+    
     var body: some View {
         VStack {
             Image(systemName: "globe")
@@ -16,6 +21,12 @@ struct ContentView: View {
             Text("Hello, world!")
         }
         .padding()
+    }
+    
+    func registerContainer() {
+        container.register(IStorage.self) {
+            FileStorage(root: .appSupport)
+        }
     }
 }
 

@@ -26,20 +26,7 @@ struct ProjectView: View {
                 
                 ticketRepository.upsert(ticket)
                 project.ticketIDs.append(ticket.id)
-                if let index = projectRepository.projects.firstIndex(where: { $0.id == project.id }) {
-                    projectRepository.projects[index].ticketIDs.append(ticket.id)
-                }
             }
-            
-            Button("print ticket count") {
-                print(project.ticketIDs.count)
-                
-                if let index = projectRepository.projects.firstIndex(where: { $0.id == project.id }) {
-                    print(projectRepository.projects[index].ticketIDs.count)
-                }
-            }
-            
-            Text(project.ticketIDs.count.description)
             
             Section("tickets") {
                 Text(project.ticketIDs.count.description)

@@ -1,0 +1,15 @@
+{
+  "originHash" : "d43cc5a844f2c33e5394505cf2c1ff7e13c91ad21d3632b05586bbabcac897bb",
+  "pins" : [
+    {
+      "identity" : "swiftytoys",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/runlucky/SwiftyToys",
+      "state" : {
+        "revision" : "0f924a57d00c916c435f8de1f969096d8da287e5",
+        "version" : "0.0.5"
+      }
+    }
+  ],
+  "version" : 3
+}

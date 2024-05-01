@@ -11,6 +11,8 @@
 		192356FD2BE1CD62003EA55F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192356FC2BE1CD62003EA55F /* ContentView.swift */; };
 		192356FF2BE1CD63003EA55F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192356FE2BE1CD63003EA55F /* Assets.xcassets */; };
 		192357022BE1CD63003EA55F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192357012BE1CD63003EA55F /* Preview Assets.xcassets */; };
+		1923570A2BE1DAA3003EA55F /* SwiftyToys in Frameworks */ = {isa = PBXBuildFile; productRef = 192357092BE1DAA3003EA55F /* SwiftyToys */; };
+		1923570C2BE1DAEA003EA55F /* Gear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923570B2BE1DAEA003EA55F /* Gear.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,7 @@
 		192356FC2BE1CD62003EA55F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		192356FE2BE1CD63003EA55F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		192357012BE1CD63003EA55F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1923570B2BE1DAEA003EA55F /* Gear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Gear.swift; path = ../../Gear.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +29,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1923570A2BE1DAA3003EA55F /* SwiftyToys in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,6 +59,7 @@
 				192356FC2BE1CD62003EA55F /* ContentView.swift */,
 				192356FE2BE1CD63003EA55F /* Assets.xcassets */,
 				192357002BE1CD63003EA55F /* Preview Content */,
+				1923570B2BE1DAEA003EA55F /* Gear.swift */,
 			);
 			path = TravelBrochure;
 			sourceTree = "<group>";
@@ -83,6 +88,9 @@
 			dependencies = (
 			);
 			name = TravelBrochure;
+			packageProductDependencies = (
+				192357092BE1DAA3003EA55F /* SwiftyToys */,
+			);
 			productName = TravelBrochure;
 			productReference = 192356F72BE1CD62003EA55F /* TravelBrochure.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 192356EE2BE1CD62003EA55F;
+			packageReferences = (
+				192357082BE1DAA3003EA55F /* XCRemoteSwiftPackageReference "SwiftyToys" */,
+			);
 			productRefGroup = 192356F82BE1CD62003EA55F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -139,6 +150,7 @@
 			files = (
 				192356FD2BE1CD62003EA55F /* ContentView.swift in Sources */,
 				192356FB2BE1CD62003EA55F /* TravelBrochureApp.swift in Sources */,
+				1923570C2BE1DAEA003EA55F /* Gear.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +356,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		192357082BE1DAA3003EA55F /* XCRemoteSwiftPackageReference "SwiftyToys" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/runlucky/SwiftyToys";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		192357092BE1DAA3003EA55F /* SwiftyToys */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 192357082BE1DAA3003EA55F /* XCRemoteSwiftPackageReference "SwiftyToys" */;
+			productName = SwiftyToys;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 192356EF2BE1CD62003EA55F /* Project object */;
 }

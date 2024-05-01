@@ -1,15 +1,13 @@
-//
-//  TravelBrochureApp.swift
-//  TravelBrochure
-//
-//  Created by Kakeru Fukuda on 2024/05/01.
-//
-
 import SwiftUI
+import SwiftyToys
 
 @main
-struct TravelBrochureApp: App {
+struct Main: App {
     @Environment(\.scenePhase) private var scenePhase
+    
+    init() {
+        registerContainer()
+    }
     
     var body: some Scene {
         WindowGroup {
@@ -29,4 +27,11 @@ struct TravelBrochureApp: App {
             }
         }
     }
+    
+    func registerContainer() {
+        container.register(IStorage.self) {
+            FileStorage(root: .appSupport)
+        }
+    }
+
 }

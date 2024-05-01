@@ -17,8 +17,7 @@ struct ProjectView: View {
     
     var body: some View {
         List {
-            Text(project.name)
-//            Text(project.memo)
+            TextField("プロジェクト名", text: $project.name)
             
             Button("add ticket") {
                 let ticket = Ticket(name: "my ticket \(ticketRepository.tickets.count + 1)",
@@ -29,11 +28,15 @@ struct ProjectView: View {
             }
             
             Section("tickets") {
-                Text(project.ticketIDs.count.description)
                 ForEach(project.ticketIDs, id: \.self) { id in
-                    if let ticket = ticketRepository.get(id: id) {
-                        Text(ticket.name)
+                    if let index = ticketRepository.tickets.firstIndex(where: { $0.id == id}) {
+                        let ticket = $ticketRepository.tickets[index]
+                        TicketRowView(ticket: ticket)
                     }
+//
+//                    if let ticket = ticketRepository.get(id: id) {
+//                        Text(ticket.name)
+//                    }
                 }
             }
             
@@ -44,18 +47,11 @@ struct ProjectView: View {
                 }
             }
         }
+//        .listStyle(.plain)
     }
-    
-    @ViewBuilder private func showTicket(_ id: String) -> some View {
-        if let ticket = ticketRepository.get(id: id) {
-            Text(ticket.name)
-        }
-    }
-    
-    
     
 }
 
 #Preview {
-    ProjectView(project: .constant(.init(name: "")))
+    ProjectView(project: .constant(.init(name: "テストプロジェクト")))
 }

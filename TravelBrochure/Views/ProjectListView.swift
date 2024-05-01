@@ -5,10 +5,7 @@ import SwiftyToys
 struct ProjectListView: View {
     @StateObject private var repository = ProjectRepository.shared
     @State var selectedIndex: Int? = nil
-    
 
-    init() {
-    }
     
     var body: some View {
         List {
@@ -16,17 +13,19 @@ struct ProjectListView: View {
                 let project = Project(name: "my project \(repository.projects.count + 1)")
                 repository.add(project)
             }
-            ForEach(Array(repository.projects.enumerated()), id: \.element.id) { index, project in
-                showProjectName(project)
-                    .onTapGesture {
-                        self.selectedIndex = index
-                    }
+            
+            Section {
+                ForEach(Array(repository.projects.enumerated()), id: \.element.id) { index, project in
+                    showProjectName(project)
+                        .onTapGesture {
+                            self.selectedIndex = index
+                        }
+                }
             }
         }
         .sheet(item: $selectedIndex) { index in
             ProjectView(project: $repository.projects[index])
         }
-        
     }
     
     func showProjectName(_ project: Project) -> some View {
@@ -37,4 +36,8 @@ struct ProjectListView: View {
 
 #Preview {
     ProjectListView()
+}
+
+extension Int: Identifiable {
+    public var id: Int { self }
 }

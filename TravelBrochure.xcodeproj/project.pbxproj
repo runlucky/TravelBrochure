@@ -7,27 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		192356FB2BE1CD62003EA55F /* TravelBrochureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192356FA2BE1CD62003EA55F /* TravelBrochureApp.swift */; };
+		192356FB2BE1CD62003EA55F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192356FA2BE1CD62003EA55F /* Main.swift */; };
 		192356FD2BE1CD62003EA55F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192356FC2BE1CD62003EA55F /* ContentView.swift */; };
 		192356FF2BE1CD63003EA55F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192356FE2BE1CD63003EA55F /* Assets.xcassets */; };
 		192357022BE1CD63003EA55F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192357012BE1CD63003EA55F /* Preview Assets.xcassets */; };
 		1923570A2BE1DAA3003EA55F /* SwiftyToys in Frameworks */ = {isa = PBXBuildFile; productRef = 192357092BE1DAA3003EA55F /* SwiftyToys */; };
 		1923570E2BE21617003EA55F /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923570D2BE21617003EA55F /* ProjectView.swift */; };
 		192357102BE2165A003EA55F /* TicketRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923570F2BE2165A003EA55F /* TicketRepository.swift */; };
-		19FA84BA2BE1E864000AA44C /* Gear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84B92BE1E864000AA44C /* Gear.swift */; };
+		1923572F2BE257F1003EA55F /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1923572E2BE257F1003EA55F /* Ticket.swift */; };
+		192357312BE26950003EA55F /* TicketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192357302BE26950003EA55F /* TicketRowView.swift */; };
+		192357342BE2749E003EA55F /* TicketEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192357332BE2749E003EA55F /* TicketEditView.swift */; };
+		19FA84BA2BE1E864000AA44C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84B92BE1E864000AA44C /* Project.swift */; };
 		19FA84BC2BE2063D000AA44C /* ProjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84BB2BE2063D000AA44C /* ProjectRepository.swift */; };
 		19FA84C02BE209CE000AA44C /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84BF2BE209CE000AA44C /* ProjectListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		192356F72BE1CD62003EA55F /* TravelBrochure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBrochure.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		192356FA2BE1CD62003EA55F /* TravelBrochureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelBrochureApp.swift; sourceTree = "<group>"; };
+		192356FA2BE1CD62003EA55F /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		192356FC2BE1CD62003EA55F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		192356FE2BE1CD63003EA55F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		192357012BE1CD63003EA55F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1923570D2BE21617003EA55F /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		1923570F2BE2165A003EA55F /* TicketRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRepository.swift; sourceTree = "<group>"; };
-		19FA84B92BE1E864000AA44C /* Gear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gear.swift; sourceTree = "<group>"; };
+		1923572E2BE257F1003EA55F /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		192357302BE26950003EA55F /* TicketRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRowView.swift; sourceTree = "<group>"; };
+		192357332BE2749E003EA55F /* TicketEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEditView.swift; sourceTree = "<group>"; };
+		19FA84B92BE1E864000AA44C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		19FA84BB2BE2063D000AA44C /* ProjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepository.swift; sourceTree = "<group>"; };
 		19FA84BF2BE209CE000AA44C /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,15 +69,12 @@
 		192356F92BE1CD62003EA55F /* TravelBrochure */ = {
 			isa = PBXGroup;
 			children = (
-				192356FA2BE1CD62003EA55F /* TravelBrochureApp.swift */,
-				192356FC2BE1CD62003EA55F /* ContentView.swift */,
+				1923572D2BE257DB003EA55F /* Models */,
+				1923572C2BE257C8003EA55F /* Repositories */,
+				1923572B2BE257B7003EA55F /* Views */,
 				192356FE2BE1CD63003EA55F /* Assets.xcassets */,
+				192356FA2BE1CD62003EA55F /* Main.swift */,
 				192357002BE1CD63003EA55F /* Preview Content */,
-				19FA84B92BE1E864000AA44C /* Gear.swift */,
-				19FA84BB2BE2063D000AA44C /* ProjectRepository.swift */,
-				1923570F2BE2165A003EA55F /* TicketRepository.swift */,
-				19FA84BF2BE209CE000AA44C /* ProjectListView.swift */,
-				1923570D2BE21617003EA55F /* ProjectView.swift */,
 			);
 			path = TravelBrochure;
 			sourceTree = "<group>";
@@ -82,6 +85,44 @@
 				192357012BE1CD63003EA55F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1923572B2BE257B7003EA55F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				192357322BE2747B003EA55F /* Ticket */,
+				192356FC2BE1CD62003EA55F /* ContentView.swift */,
+				19FA84BF2BE209CE000AA44C /* ProjectListView.swift */,
+				1923570D2BE21617003EA55F /* ProjectView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		1923572C2BE257C8003EA55F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				19FA84BB2BE2063D000AA44C /* ProjectRepository.swift */,
+				1923570F2BE2165A003EA55F /* TicketRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		1923572D2BE257DB003EA55F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				19FA84B92BE1E864000AA44C /* Project.swift */,
+				1923572E2BE257F1003EA55F /* Ticket.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		192357322BE2747B003EA55F /* Ticket */ = {
+			isa = PBXGroup;
+			children = (
+				192357302BE26950003EA55F /* TicketRowView.swift */,
+				192357332BE2749E003EA55F /* TicketEditView.swift */,
+			);
+			path = Ticket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,11 +202,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1923570E2BE21617003EA55F /* ProjectView.swift in Sources */,
-				19FA84BA2BE1E864000AA44C /* Gear.swift in Sources */,
+				19FA84BA2BE1E864000AA44C /* Project.swift in Sources */,
 				19FA84C02BE209CE000AA44C /* ProjectListView.swift in Sources */,
+				1923572F2BE257F1003EA55F /* Ticket.swift in Sources */,
+				192357342BE2749E003EA55F /* TicketEditView.swift in Sources */,
 				19FA84BC2BE2063D000AA44C /* ProjectRepository.swift in Sources */,
 				192356FD2BE1CD62003EA55F /* ContentView.swift in Sources */,
-				192356FB2BE1CD62003EA55F /* TravelBrochureApp.swift in Sources */,
+				192357312BE26950003EA55F /* TicketRowView.swift in Sources */,
+				192356FB2BE1CD62003EA55F /* Main.swift in Sources */,
 				192357102BE2165A003EA55F /* TicketRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

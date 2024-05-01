@@ -32,10 +32,6 @@ class TicketRepository: ObservableObject {
 //        projects.append(project)
 //    }
     
-    func get(id: String) -> Ticket? {
-        tickets.first { $0.id == id }
-    }
-    
     func upsert(_ ticket: Ticket) {
         if let index = tickets.firstIndex(where: { $0.id == ticket.id }) {
             tickets[index] = ticket

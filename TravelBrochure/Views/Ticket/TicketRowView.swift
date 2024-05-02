@@ -1,25 +1,37 @@
-//
-//  TicketRowView.swift
-//  TravelBrochure
-//
-//  Created by kakeru on 2024/05/02.
-//
-
 import SwiftUI
+import SwiftyToys
 
 struct TicketRowView: View {
-    @State var ticket: Ticket
-    @State var checked = false
+    @Binding var ticket: Ticket
+    @State var checked: Bool
+    @State var showEditSheet = false
+    
+    let onChanged: (Bool) -> Void
+
     var body: some View {
         HStack {
-            Toggle(isOn: $checked) {
-                Text(ticket.name)
+            Toggle(isOn: $checked) { }
+            .toggleStyle(.checkBox)
+            .labelsHidden()
+            .onChange(of: checked) {
+                onChanged(checked)
             }
+            
+            Text(ticket.name)
+                .onTapGesture {
+                    self.showEditSheet = true
+                }
+        }
+        .sheet(isPresented: $showEditSheet) {
+            TicketEditView(ticket: $ticket)
+                .presentationDetents([.medium, .large])
         }
 //        Text(ticket.name)
+        
     }
 }
 
 #Preview {
-    TicketRowView(ticket: Ticket(name: "テストチケット", rank: 1, memo: "", tag: ""))
+    @State var ticket = Ticket(name: "テストチケット", rank: 1, memo: "", tag: "")
+    return TicketRowView(ticket: $ticket, checked: true) { _ in }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		190E6CDF2BE346F0004E9246 /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E6CDE2BE346F0004E9246 /* StarRating.swift */; };
 		192356FB2BE1CD62003EA55F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192356FA2BE1CD62003EA55F /* Main.swift */; };
 		192356FD2BE1CD62003EA55F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192356FC2BE1CD62003EA55F /* ContentView.swift */; };
 		192356FF2BE1CD63003EA55F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192356FE2BE1CD63003EA55F /* Assets.xcassets */; };
@@ -19,11 +20,12 @@
 		19FA84BA2BE1E864000AA44C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84B92BE1E864000AA44C /* Project.swift */; };
 		19FA84BC2BE2063D000AA44C /* ProjectRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84BB2BE2063D000AA44C /* ProjectRepository.swift */; };
 		19FA84C02BE209CE000AA44C /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84BF2BE209CE000AA44C /* ProjectListView.swift */; };
-		19FA84C32BE32127000AA44C /* CheckboxToggleStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84C22BE32127000AA44C /* CheckboxToggleStyle.swift */; };
 		19FA84C52BE321CE000AA44C /* TicketRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA84C42BE321CE000AA44C /* TicketRowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		190E6CDD2BE3267A004E9246 /* SwiftyToys */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftyToys; path = ../trcom/SwiftyToys; sourceTree = "<group>"; };
+		190E6CDE2BE346F0004E9246 /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
 		192356F72BE1CD62003EA55F /* TravelBrochure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBrochure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		192356FA2BE1CD62003EA55F /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		192356FC2BE1CD62003EA55F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,7 +38,6 @@
 		19FA84B92BE1E864000AA44C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		19FA84BB2BE2063D000AA44C /* ProjectRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectRepository.swift; sourceTree = "<group>"; };
 		19FA84BF2BE209CE000AA44C /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
-		19FA84C22BE32127000AA44C /* CheckboxToggleStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxToggleStyle.swift; sourceTree = "<group>"; };
 		19FA84C42BE321CE000AA44C /* TicketRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketRowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -55,6 +56,7 @@
 		192356EE2BE1CD62003EA55F = {
 			isa = PBXGroup;
 			children = (
+				190E6CDD2BE3267A004E9246 /* SwiftyToys */,
 				192356F92BE1CD62003EA55F /* TravelBrochure */,
 				192356F82BE1CD62003EA55F /* Products */,
 			);
@@ -92,7 +94,6 @@
 		1923572B2BE257B7003EA55F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				19FA84C12BE32117000AA44C /* Components */,
 				192357322BE2747B003EA55F /* Ticket */,
 				192356FC2BE1CD62003EA55F /* ContentView.swift */,
 				19FA84BF2BE209CE000AA44C /* ProjectListView.swift */,
@@ -124,16 +125,9 @@
 			children = (
 				192357332BE2749E003EA55F /* TicketEditView.swift */,
 				19FA84C42BE321CE000AA44C /* TicketRowView.swift */,
+				190E6CDE2BE346F0004E9246 /* StarRating.swift */,
 			);
 			path = Ticket;
-			sourceTree = "<group>";
-		};
-		19FA84C12BE32117000AA44C /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				19FA84C22BE32127000AA44C /* CheckboxToggleStyle.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,12 +209,12 @@
 				19FA84C52BE321CE000AA44C /* TicketRowView.swift in Sources */,
 				1923570E2BE21617003EA55F /* ProjectView.swift in Sources */,
 				19FA84BA2BE1E864000AA44C /* Project.swift in Sources */,
-				19FA84C32BE32127000AA44C /* CheckboxToggleStyle.swift in Sources */,
 				19FA84C02BE209CE000AA44C /* ProjectListView.swift in Sources */,
 				1923572F2BE257F1003EA55F /* Ticket.swift in Sources */,
 				192357342BE2749E003EA55F /* TicketEditView.swift in Sources */,
 				19FA84BC2BE2063D000AA44C /* ProjectRepository.swift in Sources */,
 				192356FD2BE1CD62003EA55F /* ContentView.swift in Sources */,
+				190E6CDF2BE346F0004E9246 /* StarRating.swift in Sources */,
 				192356FB2BE1CD62003EA55F /* Main.swift in Sources */,
 				192357102BE2165A003EA55F /* TicketRepository.swift in Sources */,
 			);
@@ -281,7 +275,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -338,7 +332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

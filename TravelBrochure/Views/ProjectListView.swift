@@ -4,27 +4,26 @@ import SwiftyToys
 
 struct ProjectListView: View {
     @StateObject private var repository = ProjectRepository.shared
-    @State var selectedIndex: Int? = nil
-
     
     var body: some View {
-        List {
-            Button("add project") {
-                let project = Project(name: "my project \(repository.projects.count + 1)")
-                repository.add(project)
-            }
-            
-            Section {
-                ForEach(Array(repository.projects.enumerated()), id: \.element.id) { index, project in
-                    showProjectName(project)
-                        .onTapGesture {
-                            self.selectedIndex = index
+        NavigationStack {
+            List {
+                Button("★[DEBUG]add project") {
+                    let project = Project(name: "my project \(repository.projects.count + 1)")
+                    repository.add(project)
+                }
+                
+                Section {
+                    ForEach(Array(repository.projects.enumerated()), id: \.element.id) { index, project in
+                        NavigationLink(value: index) {
+                            showProjectName(project)
                         }
+                    }
                 }
             }
-        }
-        .sheet(item: $selectedIndex) { index in
-            ProjectView(project: $repository.projects[index])
+            .navigationDestination(for: Int.self) { index in
+                ProjectView(project: $repository.projects[index])
+            }
         }
     }
     

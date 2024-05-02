@@ -20,7 +20,7 @@ struct ProjectView: View {
         List {
             TextField("プロジェクト名", text: $project.name)
             
-            Button("add ticket") {
+            Button("★[DEBUG] add ticket") {
                 let ticket = Ticket(name: "my ticket \(ticketRepository.tickets.count + 1)",
                                     rank: 1, memo: "", tag: "")
                 
@@ -32,7 +32,14 @@ struct ProjectView: View {
                 ForEach(project.ticketIDs, id: \.self) { id in
                     if let index = ticketRepository.tickets.firstIndex(where: { $0.id == id}) {
                         let ticket = $ticketRepository.tickets[index]
-                        TicketRowView(ticket: ticket.wrappedValue)
+                        
+                        TicketRowView(ticket: ticket, checked: project.isChecked(ticket.id)) { checked in
+                            if checked {
+                                project.checkedIDs.append(ticket.id)
+                            } else {
+                                project.checkedIDs.removeAll { $0 == ticket.id }
+                            }
+                        }
                     }
                 }
             }
@@ -44,7 +51,14 @@ struct ProjectView: View {
                 }
             }
         }
-//        .listStyle(.plain)
+        .navigationTitle(project.name)
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(systemName: "ellipsis") {
+                    
+                }
+            }
+        }
     }
 }
 

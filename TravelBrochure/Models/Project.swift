@@ -16,6 +16,10 @@ struct Project: Codable, Identifiable {
         self.ticketIDs = []
         self.checkedIDs = []
     }
+    
+    func isChecked(_ id: String) -> Bool {
+        checkedIDs.contains(id)
+    }
 }
 
 

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		190E6CDF2BE346F0004E9246 /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E6CDE2BE346F0004E9246 /* StarRating.swift */; };
+		190E6CFB2BE384AD004E9246 /* TicketAddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190E6CFA2BE384AD004E9246 /* TicketAddView.swift */; };
 		192356FB2BE1CD62003EA55F /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192356FA2BE1CD62003EA55F /* Main.swift */; };
 		192356FD2BE1CD62003EA55F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192356FC2BE1CD62003EA55F /* ContentView.swift */; };
 		192356FF2BE1CD63003EA55F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 192356FE2BE1CD63003EA55F /* Assets.xcassets */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		190E6CDD2BE3267A004E9246 /* SwiftyToys */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = SwiftyToys; path = ../trcom/SwiftyToys; sourceTree = "<group>"; };
 		190E6CDE2BE346F0004E9246 /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
+		190E6CFA2BE384AD004E9246 /* TicketAddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketAddView.swift; sourceTree = "<group>"; };
 		192356F72BE1CD62003EA55F /* TravelBrochure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelBrochure.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		192356FA2BE1CD62003EA55F /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		192356FC2BE1CD62003EA55F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				192357332BE2749E003EA55F /* TicketEditView.swift */,
 				19FA84C42BE321CE000AA44C /* TicketRowView.swift */,
 				190E6CDE2BE346F0004E9246 /* StarRating.swift */,
+				190E6CFA2BE384AD004E9246 /* TicketAddView.swift */,
 			);
 			path = Ticket;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			files = (
 				19FA84C52BE321CE000AA44C /* TicketRowView.swift in Sources */,
 				1923570E2BE21617003EA55F /* ProjectView.swift in Sources */,
+				190E6CFB2BE384AD004E9246 /* TicketAddView.swift in Sources */,
 				19FA84BA2BE1E864000AA44C /* Project.swift in Sources */,
 				19FA84C02BE209CE000AA44C /* ProjectListView.swift in Sources */,
 				1923572F2BE257F1003EA55F /* Ticket.swift in Sources */,

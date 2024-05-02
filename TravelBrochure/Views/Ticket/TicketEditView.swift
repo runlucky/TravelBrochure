@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct TicketEditView: View {
+    @Environment(\.dismiss) var dismiss
+    
     @Binding var ticket: Ticket
-
     var body: some View {
         NavigationStack {
             List {
@@ -23,6 +24,13 @@ struct TicketEditView: View {
                 }
             }
             .listStyle(.grouped)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("閉じる") {
+                        dismiss()
+                    }
+                }
+            }
         }
     }
 }

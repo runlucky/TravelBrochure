@@ -7,10 +7,17 @@ struct Ticket: Codable, Identifiable {
     var memo: String
     var tag: String
     
+    var projects: [Project] = []
+    
     init(name: String, rank: Int, memo: String, tag: String) {
         self.name = name
         self.rank = rank
         self.memo = memo
         self.tag = tag
+    }
+    
+    struct Project: Codable {
+        var id: String
+        var checked: Bool
     }
 }

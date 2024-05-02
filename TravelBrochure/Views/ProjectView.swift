@@ -15,20 +15,19 @@ struct ProjectView: View {
     @StateObject var ticketRepository = TicketRepository.shared
     @Binding var project: Project
     
+    @State var showAddTicket = false
     
     var body: some View {
         List {
             TextField("プロジェクト名", text: $project.name)
-            
-            Button("★[DEBUG] add ticket") {
-                let ticket = Ticket(name: "my ticket \(ticketRepository.tickets.count + 1)",
-                                    rank: 1, memo: "", tag: "")
-                
-                ticketRepository.upsert(ticket)
-                project.ticketIDs.append(ticket.id)
+            HStack {
+                Image(systemName: "text.justify.left")
+                    .foregroundStyle(Color.text.opacity(0.5))
+                TextField("メモ...", text: $project.memo, axis: .vertical)
+                    .textFieldStyle(.roundedBorder)
             }
-            
-            Section("tickets") {
+
+            Section() {
                 ForEach(project.ticketIDs, id: \.self) { id in
                     if let index = ticketRepository.tickets.firstIndex(where: { $0.id == id}) {
                         let ticket = $ticketRepository.tickets[index]
@@ -42,6 +41,10 @@ struct ProjectView: View {
                         }
                     }
                 }
+                
+                Button("アイテムを追加") {
+                    showAddTicket = true
+                }
             }
             
             Section {
@@ -50,6 +53,17 @@ struct ProjectView: View {
                     dismiss()
                 }
             }
+            
+            Section("DEBUG") {
+                Button("★ add ticket") {
+                    let ticket = Ticket(name: "my ticket \(ticketRepository.tickets.count + 1)",
+                                        rank: 1, memo: "", tag: "")
+                    
+                    ticketRepository.upsert(ticket)
+                    project.ticketIDs.append(ticket.id)
+                }
+            }
+
         }
         .navigationTitle(project.name)
         .toolbar {
@@ -58,6 +72,9 @@ struct ProjectView: View {
                     
                 }
             }
+        }
+        .sheet(isPresented: $showAddTicket) {
+            TicketAddView(project: $project)
         }
     }
 }

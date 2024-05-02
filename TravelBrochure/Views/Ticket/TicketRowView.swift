@@ -10,25 +10,38 @@ struct TicketRowView: View {
 
     var body: some View {
         HStack {
-            Toggle(isOn: $checked) { }
-            .toggleStyle(.checkBox)
-            .labelsHidden()
-            .onChange(of: checked) {
-                onChanged(checked)
-            }
-            
-            Text(ticket.name)
+            checkbox()
+            title()
                 .onTapGesture {
                     self.showEditSheet = true
                 }
+            
         }
         .sheet(isPresented: $showEditSheet) {
             TicketEditView(ticket: $ticket)
                 .presentationDetents([.medium, .large])
         }
-//        Text(ticket.name)
-        
     }
+    
+    private func checkbox() -> some View {
+        Toggle(isOn: $checked) { }
+        .toggleStyle(.checkBox)
+        .labelsHidden()
+        .onChange(of: checked) {
+            onChanged(checked)
+        }
+    }
+    
+    @ViewBuilder private func title() -> some View {
+        if checked {
+            Text(ticket.name)
+                .strikethrough()
+                .opacity(0.5)
+        } else {
+            Text(ticket.name)
+        }
+    }
+    
 }
 
 #Preview {

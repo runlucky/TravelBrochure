@@ -11,7 +11,12 @@ struct TicketEditView: View {
             // タグ
             // ★
             // メモ
+            TextField("テキストフィールド", text: $ticket.memo, axis: .vertical)
+                .textFieldStyle(.roundedBorder)
             
+            TextField("テキストフィールド", text: $ticket.memo, axis: .vertical)
+                .textFieldStyle(.roundedBorder)
+
             
             
             TextField("チケット名", text: $ticket.name)
@@ -23,6 +28,6 @@ struct TicketEditView: View {
 }
 
 #Preview {
-    let ticket = Ticket(name: "hogehogeチケット", rank: 2, memo: "メモです", tag: "食料")
-    return TicketEditView(ticket: .constant(ticket))
+    @State var ticket = Ticket(name: "チケット名", rank: 2, memo: "メモです", tag: "食料")
+    return TicketEditView(ticket: $ticket)
 }

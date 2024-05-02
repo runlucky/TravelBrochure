@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftyToys
 
 struct ProjectView: View {
     @Environment(\.dismiss) var dismiss
@@ -31,12 +32,8 @@ struct ProjectView: View {
                 ForEach(project.ticketIDs, id: \.self) { id in
                     if let index = ticketRepository.tickets.firstIndex(where: { $0.id == id}) {
                         let ticket = $ticketRepository.tickets[index]
-                        TicketRowView(ticket: ticket)
+                        TicketRowView(ticket: ticket.wrappedValue)
                     }
-//
-//                    if let ticket = ticketRepository.get(id: id) {
-//                        Text(ticket.name)
-//                    }
                 }
             }
             
@@ -49,7 +46,6 @@ struct ProjectView: View {
         }
 //        .listStyle(.plain)
     }
-    
 }
 
 #Preview {

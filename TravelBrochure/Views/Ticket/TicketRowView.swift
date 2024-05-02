@@ -1,23 +1,25 @@
 //
-//  TicketView.swift
+//  TicketRowView.swift
 //  TravelBrochure
 //
-//  Created by Kakeru Fukuda on 2024/05/01.
+//  Created by kakeru on 2024/05/02.
 //
 
 import SwiftUI
 
 struct TicketRowView: View {
-    @Binding var ticket: Ticket
-    
+    @State var ticket: Ticket
+    @State var checked = false
     var body: some View {
         HStack {
-            TextField("チケット名", text: $ticket.name)
+            Toggle(isOn: $checked) {
+                Text(ticket.name)
+            }
         }
+//        Text(ticket.name)
     }
 }
 
 #Preview {
-    let ticket = Ticket(name: "hogehogeチケット", rank: 2, memo: "メモです", tag: "食料")
-    return TicketRowView(ticket: .constant(ticket))
+    TicketRowView(ticket: Ticket(name: "テストチケット", rank: 1, memo: "", tag: ""))
 }

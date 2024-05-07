@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftyToys
 
 struct TicketRowView: View {
+    @Binding var project: Project
     @Binding var ticket: Ticket
     @State var checked: Bool
     @State var showEditSheet = false
@@ -18,7 +19,7 @@ struct TicketRowView: View {
             
         }
         .sheet(isPresented: $showEditSheet) {
-            TicketEditView(ticket: $ticket)
+            TicketEditView(project: $project, ticket: $ticket)
                 .presentationDetents([.medium, .large])
         }
     }
@@ -44,7 +45,3 @@ struct TicketRowView: View {
     
 }
 
-#Preview {
-    @State var ticket = Ticket(name: "テストチケット", rank: 1, memo: "", tag: "")
-    return TicketRowView(ticket: $ticket, checked: true) { _ in }
-}

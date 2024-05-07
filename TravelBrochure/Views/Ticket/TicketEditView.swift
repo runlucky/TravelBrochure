@@ -3,6 +3,7 @@ import SwiftUI
 struct TicketEditView: View {
     @Environment(\.dismiss) var dismiss
     
+    @Binding var project: Project
     @Binding var ticket: Ticket
     var body: some View {
         NavigationStack {
@@ -22,6 +23,15 @@ struct TicketEditView: View {
                     TextField("メモ...", text: $ticket.memo, axis: .vertical)
                         .textFieldStyle(.roundedBorder)
                 }
+                
+                Section {
+                    Button("このプロジェクトから削除") {
+                        ticket.projects.removeAll { $0.id == project.id }
+                        project.ticketIDs.removeAll { $0 == ticket.id }
+                        dismiss()
+                    }
+                    .foregroundColor(.red)
+                }
             }
             .listStyle(.grouped)
             .toolbar {
@@ -33,9 +43,4 @@ struct TicketEditView: View {
             }
         }
     }
-}
-
-#Preview {
-    @State var ticket = Ticket(name: "チケット名", rank: 2, memo: "", tag: "食料")
-    return TicketEditView(ticket: $ticket)
 }

@@ -32,7 +32,7 @@ struct ProjectView: View {
                     if let index = ticketRepository.tickets.firstIndex(where: { $0.id == id}) {
                         let ticket = $ticketRepository.tickets[index]
                         
-                        TicketRowView(ticket: ticket, checked: project.isChecked(ticket.id)) { checked in
+                        TicketRowView(project: $project, ticket: ticket, checked: project.isChecked(ticket.id)) { checked in
                             if checked {
                                 project.checkedIDs.append(ticket.id)
                             } else {
@@ -53,17 +53,6 @@ struct ProjectView: View {
                     dismiss()
                 }
             }
-            
-            Section("DEBUG") {
-                Button("★ add ticket") {
-                    let ticket = Ticket(name: "my ticket \(ticketRepository.tickets.count + 1)",
-                                        rank: 1, memo: "", tag: "")
-                    
-                    ticketRepository.upsert(ticket)
-                    project.ticketIDs.append(ticket.id)
-                }
-            }
-
         }
         .navigationTitle(project.name)
         .toolbar {

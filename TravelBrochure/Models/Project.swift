@@ -7,7 +7,7 @@ struct Project: Codable, Identifiable {
     var memo: String
     
     var ticketIDs: [String]
-      var checkedIDs: [String]
+    var checkedIDs: [String]
     
     init(name: String) {
         self.name = name

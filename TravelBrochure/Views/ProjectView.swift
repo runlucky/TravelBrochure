@@ -27,13 +27,23 @@ struct ProjectView: View {
                     .textFieldStyle(.roundedBorder)
             }
 
-            Section() {
-                ForEach(project.ticketIDs, id: \.self) { ticketID in
-                    if let ticket = ticketRepository.getTicket(ticketID) {
+            let tickets = project.ticketIDs.compactMap { ticketRepository.getTicket($0) }
+            
+            let tags = tickets.map { $0.wrappedValue.tag }
+                .uniqued()
+                .sorted()
+
+            ForEach(tags, id: \.self) { tag in
+                Section(tag) {
+                    let filteredTickets = tickets.filter { $0.wrappedValue.tag == tag }
+                    ForEach(filteredTickets, id: \.id) { ticket in
                         TicketRowView($project, ticket)
                     }
                 }
-                
+            }
+            
+
+            Section {
                 Button("アイテムを追加") {
                     showAddTicket = true
                 }

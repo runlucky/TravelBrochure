@@ -35,11 +35,6 @@ struct TicketAddView: View {
                         TextField("メモ...", text: $ticket.memo, axis: .vertical)
                             .textFieldStyle(.roundedBorder)
                     }
-                    Button("追加") {
-                        ticketRepository.upsert(ticket)
-                        project.ticketIDs.append(ticket.id)
-                        dismiss()
-                    }.disabled(ticket.name.isEmpty)
                 }
                 
                 let tickets = ticketRepository.tickets.filter { !project.ticketIDs.contains($0.id) }
@@ -63,6 +58,14 @@ struct TicketAddView: View {
                         dismiss()
                     }
                 }
+                ToolbarItem(placement: .primaryAction) {
+                    Button("追加") {
+                        ticketRepository.upsert(ticket)
+                        project.ticketIDs.append(ticket.id)
+                        dismiss()
+                    }.disabled(ticket.name.isEmpty)
+                }
+
             }
         }
     }

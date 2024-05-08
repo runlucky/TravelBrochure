@@ -50,11 +50,11 @@ extension TicketRepository {
     }
     
     func getTicket(_ ticketID: String) -> Binding<Ticket>? {
-        guard let index = self.tickets.firstIndex(where: { $0.id == ticketID }) else { return nil }
+        guard let index = self.ticketIndex(ticketID) else { return nil }
         
-//        let xxx = self.tickets[index]
-        
-        fatalError()
-
+        return Binding(
+            get: { self.tickets[index] },
+            set: { self.tickets[index] = $0 }
+        )
     }
 }

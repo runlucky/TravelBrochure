@@ -29,8 +29,7 @@ struct ProjectView: View {
 
             Section() {
                 ForEach(project.ticketIDs, id: \.self) { ticketID in
-                    if let ticketIndex = ticketRepository.ticketIndex(ticketID) {
-                        let ticket = $ticketRepository.tickets[ticketIndex]
+                    if let ticket = ticketRepository.getTicket(ticketID) {
                         TicketRowView($project, ticket)
                     }
                 }

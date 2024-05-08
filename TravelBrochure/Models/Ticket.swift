@@ -7,7 +7,8 @@ struct Ticket: Codable, Identifiable {
     var memo: String
     var tag: String
     
-    var projects: [Project] = []
+    /// チケットに紐づくプロジェクト情報一覧
+    var projects: [ProjectInfo] = []
     
     init(name: String, rank: Int, memo: String, tag: String) {
         self.name = name
@@ -16,8 +17,12 @@ struct Ticket: Codable, Identifiable {
         self.tag = tag
     }
     
-    struct Project: Codable {
+    struct ProjectInfo: Codable {
         var id: String
         var checked: Bool
+    }
+    
+    func projectIndex(_ projectID: String) -> Int? {
+        self.projects.firstIndex { $0.id == projectID }
     }
 }

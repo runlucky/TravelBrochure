@@ -42,15 +42,18 @@ struct TicketAddView: View {
                     }.disabled(ticket.name.isEmpty)
                 }
                 
-                Section("既存アイテム") {
-                    ForEach(ticketRepository.tickets.filter { !project.ticketIDs.contains($0.id) }) { ticket in
-                        Button(ticket.name) {
-                            project.ticketIDs.append(ticket.id)
-                            dismiss()
+                let tickets = ticketRepository.tickets.filter { !project.ticketIDs.contains($0.id) }
+                if tickets.hasElement {
+                    Section("既存アイテム") {
+                        
+                        ForEach(tickets) { ticket in
+                            Button(ticket.name) {
+                                project.ticketIDs.append(ticket.id)
+                                dismiss()
+                            }
                         }
                     }
                 }
-                
             }
             .listStyle(.grouped)
             .navigationTitle("アイテムの追加")

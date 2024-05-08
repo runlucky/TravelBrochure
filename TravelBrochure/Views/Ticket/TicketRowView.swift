@@ -7,7 +7,16 @@ struct TicketRowView: View {
     @State var checked: Bool
     @State var showEditSheet = false
     
-    let onChanged: (Bool) -> Void
+    init(_ project: Binding<Project>, _ ticket: Binding<Ticket>) {
+        if let projectIndex = ticket.wrappedValue.projectIndex(project.id) {
+            self.checked = ticket.wrappedValue.projects[projectIndex].checked
+        } else {
+            self.checked = false
+        }
+
+        self._project = project
+        self._ticket = ticket
+    }
 
     var body: some View {
         HStack {
@@ -29,7 +38,11 @@ struct TicketRowView: View {
         .toggleStyle(.checkBox)
         .labelsHidden()
         .onChange(of: checked) {
-            onChanged(checked)
+            if let projectIndex = ticket.projectIndex(project.id) {
+                ticket.projects[projectIndex].checked = checked
+                return
+            }
+            ticket.projects.append(.init(id: project.id, checked: checked))
         }
     }
     

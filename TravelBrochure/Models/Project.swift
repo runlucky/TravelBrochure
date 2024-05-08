@@ -6,19 +6,14 @@ struct Project: Codable, Identifiable {
     var timestamp: Date
     var memo: String
     
+    /// プロジェクトに紐づくチケットID一覧
     var ticketIDs: [String]
-    var checkedIDs: [String]
     
     init(name: String) {
         self.name = name
         self.timestamp = Date()
         self.memo = ""
         self.ticketIDs = []
-        self.checkedIDs = []
-    }
-    
-    func isChecked(_ id: String) -> Bool {
-        checkedIDs.contains(id)
     }
 }
 

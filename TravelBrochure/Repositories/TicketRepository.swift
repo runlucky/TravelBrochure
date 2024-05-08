@@ -12,7 +12,10 @@ class TicketRepository: ObservableObject {
     private init() {
         load()
     }
-    
+}
+
+/// CRUD
+extension TicketRepository {
     private func load() {
         do {
             let tickets = try storage.get(key, type: [Ticket].self)
@@ -38,5 +41,20 @@ class TicketRepository: ObservableObject {
         } else {
             tickets.append(ticket)
         }
+    }
+}
+
+extension TicketRepository {
+    func ticketIndex(_ ticketID: String) -> Int? {
+        tickets.firstIndex { $0.id == ticketID }
+    }
+    
+    func getTicket(_ ticketID: String) -> Binding<Ticket>? {
+        guard let index = self.tickets.firstIndex(where: { $0.id == ticketID }) else { return nil }
+        
+//        let xxx = self.tickets[index]
+        
+        fatalError()
+
     }
 }

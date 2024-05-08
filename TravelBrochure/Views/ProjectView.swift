@@ -28,17 +28,10 @@ struct ProjectView: View {
             }
 
             Section() {
-                ForEach(project.ticketIDs, id: \.self) { id in
-                    if let index = ticketRepository.tickets.firstIndex(where: { $0.id == id}) {
-                        let ticket = $ticketRepository.tickets[index]
-                        
-                        TicketRowView(project: $project, ticket: ticket, checked: project.isChecked(ticket.id)) { checked in
-                            if checked {
-                                project.checkedIDs.append(ticket.id)
-                            } else {
-                                project.checkedIDs.removeAll { $0 == ticket.id }
-                            }
-                        }
+                ForEach(project.ticketIDs, id: \.self) { ticketID in
+                    if let ticketIndex = ticketRepository.ticketIndex(ticketID) {
+                        let ticket = $ticketRepository.tickets[ticketIndex]
+                        TicketRowView($project, ticket)
                     }
                 }
                 

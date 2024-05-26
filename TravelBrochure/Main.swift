@@ -11,7 +11,15 @@ struct Main: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView {
+                ContentView()
+                    .tabItem { Label("プロジェクト一覧", systemImage: "star")}
+                
+                NavigationStack {
+                    LogView()
+                }
+                    .tabItem { Label("ログ", systemImage: "circle")}
+            }
         }
         .onChange(of: scenePhase) { phase in
             switch phase {

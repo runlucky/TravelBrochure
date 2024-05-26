@@ -4,10 +4,15 @@ import SwiftyToys
 
 struct ProjectListView: View {
     @StateObject private var repository = ProjectRepository.shared
+    @State private var showTemplateList = false
     
     var body: some View {
         NavigationStack {
             List {
+                Button("プロジェクトを追加") {
+                    showTemplateList = true
+                }
+                
                 Button("★[DEBUG]add project") {
                     let project = Project(name: "my project \(repository.projects.count + 1)")
                     repository.add(project)
@@ -24,6 +29,9 @@ struct ProjectListView: View {
             .navigationDestination(for: Int.self) { index in
                 ProjectView(project: $repository.projects[index])
             }
+        }
+        .sheet(isPresented: $showTemplateList) {
+            TemplateListView()
         }
     }
     

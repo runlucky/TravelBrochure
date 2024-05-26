@@ -30,6 +30,7 @@ struct Main: App {
             case .background:
                 ProjectRepository.shared.save()
                 TicketRepository.shared.save()
+                TemplateRepository.shared.save()
             @unknown default:
                 print("unknown")
             }

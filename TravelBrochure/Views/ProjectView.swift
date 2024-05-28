@@ -41,7 +41,7 @@ struct ProjectView: View {
                     }
                 }
             }
-            
+            .listRowInsets(.init(top: 6, leading: 10, bottom: 6, trailing: 10))
 
             Section {
                 Button("アイテムを追加") {
@@ -56,6 +56,7 @@ struct ProjectView: View {
                 }
             }
         }
+        .environment(\.defaultMinListRowHeight, 0)
         .navigationTitle(project.name)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
